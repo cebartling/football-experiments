@@ -143,6 +143,27 @@ files = [
 ]
 
 [[package]]
+name = "html5lib"
+version = "1.1"
+description = "HTML parser based on the WHATWG HTML specification"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "html5lib-1.1-py2.py3-none-any.whl", hash = "sha256:0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d"},
+    {file = "html5lib-1.1.tar.gz", hash = "sha256:b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"},
+]
+
+[package.dependencies]
+six = ">=1.9"
+webencodings = "*"
+
+[package.extras]
+all = ["chardet (>=2.2)", "genshi", "lxml"]
+chardet = ["chardet (>=2.2)"]
+genshi = ["genshi"]
+lxml = ["lxml"]
+
+[[package]]
 name = "idna"
 version = "3.6"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -163,6 +184,25 @@ files = [
     {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
     {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
 ]
+
+[[package]]
+name = "mechanize"
+version = "0.4.9"
+description = "Stateful, programmatic web browsing"
+optional = false
+python-versions = "*"
+files = [
+    {file = "mechanize-0.4.9-py2.py3-none-any.whl", hash = "sha256:eafc3350fbcd895f4715712f0bdc7e544a1b2883e85f1987423b86bd9dd93ff7"},
+    {file = "mechanize-0.4.9.tar.gz", hash = "sha256:69a5edb0962f921e8b10837368c2242d8ad049f0b91ff699ce7f601bfc431521"},
+]
+
+[package.dependencies]
+html5lib = ">=0.999999999"
+
+[package.extras]
+binarytest = ["html5-parser", "lxml"]
+fast = ["html5-parser (>=0.4.4)"]
+test = ["html5lib", "service-identity", "six", "twisted"]
 
 [[package]]
 name = "numpy"
@@ -434,7 +474,18 @@ h2 = ["h2 (>=4,<5)"]
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
+[[package]]
+name = "webencodings"
+version = "0.5.1"
+description = "Character encoding aliases for legacy web content"
+optional = false
+python-versions = "*"
+files = [
+    {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
+    {file = "webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "c8851078def80eab758057261cce0ab9b3362e7d66e25c6b475a91a08d115f63"
+content-hash = "6869bea0412a818d6672702df364a616bb026d911552b82896a2e60510f64933"
