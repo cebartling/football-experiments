@@ -26,7 +26,8 @@ class Driver:
             big_board_page.goto()
             big_board_page.verify_page()
             big_board_page.select_slim_mode()
-            big_board_page.process_player_rows()
+            players = big_board_page.get_players()
+            print(players)
 
             # page.pause()
             browser.close()

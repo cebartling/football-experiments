@@ -17,12 +17,14 @@ class BigBoardPage:
         self.page.get_by_text("View THICC").first.click()
         self.page.get_by_text("SLIM").first.click()
 
-    def process_player_rows(self):
+    def get_players(self) -> list[dict[str, str]]:
         rows = self.page.locator('div.g-card__content').all()
         print(f'Found {len(rows)} player rows')
+        players = []
         for row in rows:
             rank = row.locator('span.g-label').first.text_content()
             name = row.locator('button').first.text_content()
             position = row.locator('span').all()[1].text_content()
             school = row.locator('span').all()[2].text_content()
-            print(f'{rank} - {name} - {position} - {school}')
+            players.append({'fullname': name, 'position': position, 'school': school, 'pff_rank': rank})
+        return players
