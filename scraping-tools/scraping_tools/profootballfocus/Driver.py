@@ -27,7 +27,8 @@ class Driver:
             big_board_page.verify_page()
             big_board_page.select_slim_mode()
             players = big_board_page.get_players()
-            print(players)
-
-            # page.pause()
             browser.close()
+            with open('pff_big_board_players.csv', 'w') as f:
+                f.write('Name,Position,School,Rank\n')
+                for player in players:
+                    f.write(','.join(player) + '\n')
